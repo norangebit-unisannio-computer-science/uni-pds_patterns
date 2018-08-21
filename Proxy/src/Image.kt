@@ -1,0 +1,3 @@
+interface Image {
+    fun displayImage()
+}
