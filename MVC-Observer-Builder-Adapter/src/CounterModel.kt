@@ -1,27 +1,28 @@
+import adapter.Counter
 import java.util.*
 
-class CounterModel : Observable() {
+class CounterModel : Observable(), Counter {
 
-    var count = 0
-        private set
+    private var count = 0
 
-    fun addOne() {
+    override fun addOne() {
         count++
         setChanged()
         notifyObservers()
     }
 
-    fun addTwo(){
+    override fun addTwo(){
         count += 2
         setChanged()
         notifyObservers()
     }
 
-    fun odd(){
+    override fun odd(){
         if(count%2==0){
             addOne()
         }
     }
 
+    override fun getCount() = count
 
 }
