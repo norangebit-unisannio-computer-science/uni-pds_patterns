@@ -1,4 +1,4 @@
-package builder
+package main.mvc.view.swing.builder
 
 import javax.swing.JButton
 import javax.swing.JLabel

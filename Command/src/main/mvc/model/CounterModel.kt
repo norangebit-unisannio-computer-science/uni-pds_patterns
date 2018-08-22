@@ -1,6 +1,8 @@
-import java.util.*
+package main.mvc.model
 
-class CounterModel : Observable(), Counter {
+import main.mvc.model.Counter
+
+class CounterModel: Counter() {
 
     private var count = 0
 

@@ -1,4 +1,4 @@
-package command
+package main.mvc.controller.command
 
 import java.util.*
 

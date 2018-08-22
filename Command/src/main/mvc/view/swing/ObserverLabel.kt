@@ -1,3 +1,6 @@
+package main.mvc.view.swing
+
+import main.mvc.model.Counter
 import java.util.*
 import javax.swing.JLabel
 

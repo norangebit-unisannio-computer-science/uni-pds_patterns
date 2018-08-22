@@ -1,6 +1,6 @@
-package command
+package main.mvc.controller.command
 
-import Counter
+import main.mvc.model.Counter
 
 class Odd(private val model: Counter): UndoableCommand {
 
