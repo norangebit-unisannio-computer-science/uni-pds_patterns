@@ -12,8 +12,13 @@ class CommandManager {
     }
 
     fun undo(){
-        if (!stack.empty())
-            stack.pop().undo()
+        if (!stack.empty()){
+            val cmd = stack.pop()
+            if(cmd is Odd && !stack.empty() &&stack.peek() is Odd)
+                undo()
+            else
+                cmd.undo()
+        }
     }
 
     fun isEmpty() = stack.isEmpty()

@@ -6,7 +6,7 @@ import ObserverLabel
 import javax.swing.JButton
 import javax.swing.JFrame
 
-class MyFrame(): JFrame(){
+class MyFrame: JFrame(){
     val undo = JButton("undo")
 
     init {
