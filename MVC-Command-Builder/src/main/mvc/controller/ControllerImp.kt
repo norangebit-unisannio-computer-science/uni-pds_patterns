@@ -7,7 +7,7 @@ import main.mvc.controller.command.Odd
 import main.mvc.model.Counter
 import main.mvc.view.View
 
-class Controller(private val model: Counter, private val view: View): ControllerI {
+class ControllerImp(private val model: Counter, private val view: View): Controller {
     private val cmdManager = CommandManager()
 
     init {

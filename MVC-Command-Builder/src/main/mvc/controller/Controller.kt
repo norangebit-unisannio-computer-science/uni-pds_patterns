@@ -1,6 +1,6 @@
 package main.mvc.controller
 
-interface ControllerI {
+interface Controller {
     fun addOne()
     fun addTwo()
     fun odd()

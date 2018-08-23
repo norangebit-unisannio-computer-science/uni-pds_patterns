@@ -1,6 +1,6 @@
 package main.mvc.view.cli
 
-import main.mvc.controller.ControllerI
+import main.mvc.controller.Controller
 import main.mvc.view.View
 import java.util.*
 import kotlin.system.exitProcess
@@ -8,10 +8,10 @@ import kotlin.system.exitProcess
 class Cli: View {
     private val observer = ObserverPrint()
     private var undoEnable = false
-    private var controller: ControllerI? = null
+    private var controller: Controller? = null
 
-    fun printMenu(){
-        println("Cosa vuoi fare?")
+    private fun printMenu(){
+        println("What do you want to do?")
         println("0 - exit")
         println("1 - +1")
         println("2 - +2")
@@ -20,13 +20,13 @@ class Cli: View {
             println("4 - undo")
     }
 
-    fun choise(i: Int){
+    private fun choice(i: Int){
         if(controller!=null)
             when(i){
                 1 -> controller?.addOne()
                 2 -> controller?.addTwo()
                 3 -> controller?.odd()
-                4 -> if (undoEnable) controller?.undo() else println("scelta non valida")
+                4 -> if (undoEnable) controller?.undo() else println("invalid choice")
             }
         else{
             println("Error")
@@ -34,14 +34,14 @@ class Cli: View {
         }
     }
 
-    fun launch(){
+    override fun launch(){
         val sc = Scanner(System.`in`)
         printMenu()
-        var choise = sc.nextInt()
-        while (choise!=0){
-            choise(choise)
+        var choice = sc.nextInt()
+        while (choice!=0){
+            choice(choice)
             printMenu()
-            choise = sc.nextInt()
+            choice = sc.nextInt()
         }
 
     }
@@ -52,7 +52,7 @@ class Cli: View {
         undoEnable = b
     }
 
-    override fun setController(c: ControllerI) {
+    override fun setController(c: Controller) {
         controller = c
     }
 }
