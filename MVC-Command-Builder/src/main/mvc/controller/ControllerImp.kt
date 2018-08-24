@@ -27,7 +27,7 @@ class ControllerImp(private val model: Counter, private val view: View): Control
 
     override fun odd() {
         cmdManager.execute(Odd(model))
-        view.setUndoEnable(true)
+        view.setUndoEnable(false)
     }
 
     override fun undo() {
